@@ -17,7 +17,7 @@ sudo apt update
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ___________________________________________________________________________________________________________________________________________________
-
+# Install Docker For RedHatBase [Alma server]
 
 sudo dnf update -y
 
@@ -38,3 +38,9 @@ sudo usermod -aG docker $USER
 sudo firewall-cmd --permanent --add-port=8080/tcp
 
 sudo firewall-cmd --reload
+____________________________________________________________________________________________________________________________________________________________
+
+Install Image 
+
+docker pull docker.arvancloud.ir/<ImageName>
+
