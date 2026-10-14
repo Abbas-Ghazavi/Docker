@@ -1,12 +1,6 @@
-# 🐳 راه‌اندازی Docker Registry Mirror با ابر آروان
+# 🐳 Docker Registry Mirror - ابر آروان
 
-> دسترسی سریع به ایمیج‌های داکر بدون تحریم
-
----
-
-## ⚡ روش ۱: راه‌اندازی Mirror (پیشنهادی)
-
-**۱. افزودن Mirror به داکر:**
+## روش ۱: راه‌اندازی Mirror
 
 ```bash
 sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
@@ -17,43 +11,23 @@ sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
 EOF'
 ```
 
-**۲. اعمال تغییرات:**
-
 ```bash
 docker logout
 sudo systemctl restart docker
 ```
 
-**۳. دریافت ایمیج:**
-
 ```bash
 docker pull <ImageName>
 ```
 
----
-
-## 🚀 روش ۲: استفاده مستقیم (بدون تغییر تنظیمات)
+## روش ۲: استفاده مستقیم
 
 ```bash
 docker pull docker.arvancloud.ir/<ImageName>
 ```
 
----
-
-## 🧪 تست
+## تست
 
 ```bash
 docker info
 ```
-
-باید در بخش `Registry Mirrors` ببینید:
-```
-https://docker.arvancloud.ir
-```
-
----
-
-## 📝 نکته
-
-- `<ImageName>` = نام ایمیج موردنظر
-- **Mirror** = آینه‌ی رجیستری داکر (کپی محلی از Docker Hub)
